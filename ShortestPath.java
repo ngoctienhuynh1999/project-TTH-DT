@@ -14,12 +14,12 @@ class ShortestPath {
         return minIndex; 
     } 
 	
-    void printSolution(int dist[]) 
+    void print(int dist[]) 
     { 
-        System.out.println("Khoang cach tu s toi t la: "+dist[V-1] ); 
+        System.out.println("Khoang cach ngan nhat tu s toi t la: "+dist[V-1] ); 
     } 
 	
-    void dijkstra(int graph[][], int src) 
+    void solution(int graph[][], int src) 
     { 
         int dist[] = new int[V]; 
         Boolean set[] = new Boolean[V]; 
@@ -39,7 +39,7 @@ class ShortestPath {
                    dist[u] != Integer.MAX_VALUE && dist[u] + graph[u][v] < dist[v]) 
                     dist[v] = dist[u] + graph[u][v]; 
         } 
-        printSolution(dist); 
+        print(dist); 
     } 
   
     public static void main(String[] args) 
@@ -54,6 +54,6 @@ class ShortestPath {
                 {0, 0, 0, 0, 0, 0}}; 
  
         ShortestPath t = new ShortestPath(); 
-        t.dijkstra(graph, 0); 
+        t.solution(graph, 0); 
     } 
 } 
